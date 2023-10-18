@@ -1,0 +1,283 @@
+*{
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  
+}
+#main{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+#left{
+  height: 100%;
+  padding: 20px 10px;
+  width: 4%;
+  background-color: #ffffff;
+ 
+  font-size: 20px;
+  /* gap: 50px; */
+  justify-content: start;
+  align-items: center;
+
+}
+#left img{
+  /* position: absolute; */
+  height: 140px ;
+  z-index: 999999;
+}
+#side-icon{
+  cursor: pointer;
+  font-size: 25px;
+  width: 100%;
+   gap: 30px;
+   justify-content: start;
+   align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+#side-icon i:nth-child(7){
+  margin-top: 180px;
+}
+
+
+#middle{
+  padding: 20px;
+  width: 25%;
+  height: 100%;
+  background-color: #eeeeee;
+  /* border-right: 1px solid #808080; */
+}
+
+#filedets{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#filedets #icons{
+  display: flex;
+  gap: 15px;
+}
+
+#icons i{
+  cursor: pointer;
+}
+
+#files{
+  padding: 20px 10px;
+  font-weight: 600;
+}
+
+#files .elem{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+
+#middle form{
+  display: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#middle form input{
+  font-weight: 600;
+  width: 70%;
+  padding: 8px 10px;
+  border-radius: 5px;
+  outline-color: royalblue;
+  border: 2px solid #f3f3f3;
+}
+
+.elright{
+  display: flex;
+  gap: 15px;
+}
+
+.elem:hover i{
+  opacity: 1;
+}
+
+.elright i{
+  opacity: 0;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+#middle form{
+  display: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#middle form input{
+  font-weight: 600;
+  width: 70%;
+  padding: 8px 10px;
+  border-radius: 5px;
+  outline-color: royalblue;
+  border: 2px solid #f3f3f3;
+}
+
+.elright{
+  display: flex;
+  gap: 15px;
+}
+
+.elem:hover i{
+  opacity: 1;
+}
+
+.elright i{
+  opacity: 0;
+}
+
+a{
+  color: black;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+#right{
+  height: 100%;
+  padding: 10px 10px;
+  width: 76%;
+  background-color: #ffffff;
+ 
+  position: relative;
+
+}
+
+#right small{
+  cursor: default;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #dddddd;
+  /* display: none; */
+  font-weight: 600;
+}
+
+#right #right-nav{
+  
+  width: 100%;
+  height: 40px;
+  display: flex;
+  /* background-color: cornflowerblue; */
+}
+#file-name{
+  background-color: #eeeeee;
+  display:flex ;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 10px;
+  gap: 10px;
+  
+}
+#file-name i:hover{
+  color: #ffffff;
+  background-color: #000000;
+  border-radius: 10px;
+}
+
+#file-name h2{
+  font-weight: 400;
+  font-size: 17px;
+}
+form{
+  width: 100%;
+  background-color: #eeeeee;
+  height: calc(100% - 30px);
+}
+textarea{
+  height: 98%;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 20px;
+  font-family: 'Consolas';
+  font-size: 20px;
+  font-weight: 600;
+
+}
+#submit-btn{
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  /* font-size: 20px; */
+  padding: 10px 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+}
+
+#popup{
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+  background-color:rgba(0, 0,0, 0.33);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+#popup-card{
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 10px;
+  border: 4px solid rgb(104, 104, 104);
+}
+
+#popup-card h2{
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+#popup-card hr{
+  opacity: .2;
+}
+#popup-card form input{
+  width: 100%;
+  padding: 13px 20px;
+  margin-top: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  outline-color: royalblue;
+  border: 2px solid #dadada;
+}
+#popup-card #submit{
+ background-color: royalblue;
+ color: #ffffff;
+ border-radius: 5px;
+ /* border: none; */
+ font-weight: 600;
+}

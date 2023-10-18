@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VS CODE</title>
+    <link rel="shortcut icon" href="../favicon_io.zip/favicon_io" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="main">
+      <div id="popup">
+        <div id="popup-card">
+          <h2>Change Name</h2>
+          <hr>
+          <form action="/rename/<%=elem.filename %>" method="post">
+            <input name="newname" type="text" id="inp" placeholder="enter new name" >
+            <input type="submit" id="submit" name="new-name" value="Change" >
+          </form>
+        </div>
+      </div>
+      <div id="left">
+        <img src="../pngwing.com.png" alt="">
+        <div id="side-icon">
+          <i id="shutter" class="ri-file-copy-line"></i>
+          <i class="ri-search-line"></i>
+          <i class="ri-stackshare-line"></i>
+          <i class="ri-bug-line"></i>
+          <i class="ri-chat-smile-2-line"></i>
+          <i class="ri-edge-new-line"></i>
+          <i class="ri-account-circle-line"></i>
+          <i class="ri-settings-2-line"></i>
+        </div>
+      </div>
+      <div id="middle">
+        <div id="filedets">
+          <h3>Folder Name</h3>
+          <div id="icons">
+            <i id="file-icon" class="ri-add-line"></i>
+            <i id="folder-icon" class="ri-folder-fill"></i>
+            <a href="/back"> <i class="ri-refresh-line"></i></a>
+          </div>
+        </div>
+        <div id="files">
+          <form id="fileform" action="/createfile">
+            <input type="text" name="filename" placeholder="filename">
+          </form>
+          <form id="folderform" action="/createfolder">
+            <input type="text" name="foldername" placeholder="foldername">
+          </form>
+          <% elem.forEach(function(el){ %>
+            <div class="elem">
+              <div class="elleft">
+                <% if(el.isDirectory()){ %>
+                  <i class="ri-folder-line"></i>
+                    <%= el.name %>
+                <% } else { %>
+                  <a href="/file/<%= el.name %>">
+                    <i class="ri-file-3-line"></i>
+                      <%= el.name %>
+                  </a>
+                <% } %>
+              </div>
+              <div class="elright">
+                <i id="edit" class="ri-pencil-fill"></i>
+                <% if(el.isDirectory()){ %>
+                  <a href="/delete/folder/<%= el.name %>"><i class="ri-delete-bin-7-line"></i></a>
+                <% } else { %>
+                  <a href="/delete/file/<%= el.name %>"><i class="ri-delete-bin-7-line"></i></a>
+                <% } %>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+      <div id="right">
+        <small>no file here</small>
+      </div>
+    </div>
+
+
+    <script>
+      function poweroff(){
+        document.querySelectorAll("#files form").forEach(function(frm){
+          frm.style.display = "none";
+        })
+      }
+      document.querySelector("#file-icon").addEventListener("click",function(){
+        poweroff();
+        document.querySelector("#fileform").style.display = "block";
+      })
+      document.querySelector("#folder-icon").addEventListener("click",function(){
+        poweroff();
+        document.querySelector("#folderform").style.display = "block";
+      })
+
+
+      document.querySelector("#files")
+    .addEventListener("click", function(dets){
+      if(dets.target.id === "edit"){
+        document.querySelector("#inp").value = dets.srcElement.parentElement.parentElement.textContent.trim();
+        document.querySelector("#popup").style.display = "flex";
+      }
+    })
+
+
+
+      var clutter = 0;
+      document.querySelector("#shutter").addEventListener("click",function(){
+      if(clutter == 0 ){
+        document.querySelector("#middle").style.display = "none";
+        clutter = 1;
+      }
+      else if(clutter == 1 ){
+        document.querySelector("#middle").style.display = "block";
+        clutter = 0;
+      }
+      })
+
+
+    </script>
+  </body>
+</html>
